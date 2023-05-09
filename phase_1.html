@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styless.css">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div class="question-div">
+            <label for="name">Name</label>
+            <input id="name" type="text" 
+                pattern = "^[A-Z][a-z]{1,}([ ][A-Z][a-z]{1,}){1,}"
+                required
+            ></input>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" required></input>
+        </div>
+        <div>
+            <label for="birthDate">Birth Date</label>
+            <input id="birthDate" type="text"
+                patter = "^([0][1-9]|[10-31])[/]([0][1-9]|[10-12])[/][0-9][0-9]$"
+                placeholder="dd/MM/yy"
+                required
+            ></input>
+        </div>
+        <button class="button-div" type="submit">Next</button>
+    </form>
+    <script src="phase1.js"></script>
+</body>
+</html>
