@@ -42,14 +42,42 @@ const storage = {
   
     redirectToLastCompletedPhase: () => {
       if (!storage.user.name || !storage.user.email || !storage.user.birthdate) {
-        window.location.href = '/phase1/index.html';
+        window.location.href = './phase1.html';
       } else if (!storage.user.city || !storage.user.street) { 
-        window.location.href = '/phase2/index.html';
+        //window.location.href = './phase2.html'; //it has to be fixed
       } else if (!storage.user.image || !storage.user.hobbies) {
-        window.location.href = '/phase3/index.html';
+        window.location.href = './phase3.html';
+      };
+    },
+
+    isDataStored: (keys) => {
+      for (const key of keys) {
+        if (!localStorage.getItem(key)) {
+          return false;
+        }
       }
+      return true;
     }
   };
   
   //export default storage;
   
+//buttons:
+function toPhase2(){
+    window.location.href = "./phase2.html"
+};
+
+function toPhase3(){
+  window.location.href = "./phase3.html"
+};
+
+function toPhase1(){
+  window.location.href = './phase1.html'
+};
+
+function goToSummary(){
+  window.location.href = './summary.html'
+}
+
+
+

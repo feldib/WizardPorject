@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   storage.redirectToLastCompletedPhase();
 
   phase2Form.addEventListener('submit', (event) => {
+
+
     event.preventDefault();
 
     const city = document.getElementById('city').value;
@@ -20,11 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       storage.removeItem('number');
     }
+    
+    if (!storage.isDataStored(['city', 'street', 'number'])) {
+      alert("Please fill in all fields before proceeding.");
+      event.preventDefault();
+      return;
+    };
 
-    window.location.href = '../phase3/index.html';
+    //window.location.href = '../phase3/index.html';
   });
 
   backButton.addEventListener('click', () => {
-    window.location.href = '../phase1/index.html';
+    window.location.href = './phase1.html';
   });
 });

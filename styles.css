@@ -42,6 +42,16 @@ body {
     padding-bottom: 10px;
 }
 
+/* Separate css for phase2 div*/
+.question-div-phase1 {
+    margin: 10px;
+    width : 280px;
+    height: 50px;
+    background-color: #F2F4F3;
+    border: #000000 solid 2px;
+    padding-bottom: 10px;
+}
+
 .button-div {
 
     width : 280px;
