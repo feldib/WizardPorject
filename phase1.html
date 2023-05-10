@@ -7,25 +7,22 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="phase1.css">
     <script src="common.js"></script>
-    <script>
-        storage.redirectToLastCompletedPhase()
-    </script>
-    <title>Document</title>
+    <title>Phase 1</title>
 </head>
 <body>
     <form class="main-box">
-        <div class="question-div">
+        <div class="question-div-phase1">
             <label for="name">Name</label>
             <input id="name" type="text" 
                 pattern = "^[A-Z][a-z]{1,}([ ][A-Z][a-z]{1,}){1,}"
                 required
             ></input>
         </div>
-        <div class="question-div">
+        <div class="question-div-phase1">
             <label for="email">Email</label>
             <input id="email" type="email" required></input>
         </div>
-        <div class="question-div">
+        <div class="question-div-phase1">
             <label for="birthDate">Birth Date</label>
             <input id="birthDate" type="text"
                 pattern = "^(0[1-9]|[1-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/[0-9]{2}$"
@@ -34,7 +31,7 @@
             ></input>
         </div>
         <div class="button-div">
-            <button type="submit">Next</button>
+            <button type="submit" onclick="toPhase2()">Next</button>
         </div>
     </form>
     <script src="phase1.js"></script>
