@@ -18,7 +18,7 @@ function trueHobbies(){
 
     hobbieString = ''
     for (let i = 0; i < checkedHobbiesArr.length; i++){
-        hobbieString += ` ${checkedHobbiesArr[i]},`;
+        hobbieString += `, ${checkedHobbiesArr[i]}`;
     };
 
     return hobbieString;
