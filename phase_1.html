@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="phase1.css">
+    <script src="common.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <form>
+    <form class="main-box">
         <div class="question-div">
             <label for="name">Name</label>
             <input id="name" type="text" 
@@ -16,19 +18,21 @@
                 required
             ></input>
         </div>
-        <div>
+        <div class="question-div">
             <label for="email">Email</label>
             <input id="email" type="email" required></input>
         </div>
-        <div>
+        <div class="question-div">
             <label for="birthDate">Birth Date</label>
             <input id="birthDate" type="text"
-                patter = "^([0][1-9]|[10-31])[/]([0][1-9]|[10-12])[/][0-9][0-9]$"
+                pattern = "^([0][1-9]|[10-31])[/]([0][1-9]|[10-12])[/][0-9][0-9]$"
                 placeholder="dd/MM/yy"
                 required
             ></input>
         </div>
-        <button class="button-div" type="submit">Next</button>
+        <div class="button-div">
+            <button type="submit">Next</button>
+        </div>
     </form>
     <script src="phase1.js"></script>
 </body>
