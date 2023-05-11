@@ -1,9 +1,11 @@
 /* functions for phase 3 */
 //import storage from "./common"
 
+const thisSite = 'phase3'
+
 //check if stuff is there in the local Storage:
 document.addEventListener('DOMContentLoaded', () => {
-    storage.redirectToLastCompletedPhase();
+    storage.checksite(thisSite);
 });
 
 //get imgURL from  the input

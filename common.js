@@ -43,12 +43,32 @@ const storage = {
     redirectToLastCompletedPhase: () => {
       if (!storage.user.name || !storage.user.email || !storage.user.birthdate) {
         window.location.href = './phase1.html';
-      } else if (storage.user.name && storage.user.email && storage.user.birthdate && !storage.user.city && !storage.user.street) { 
+      } else if (storage.user.name && 
+                 storage.user.email && 
+                 storage.user.birthdate && 
+                 !storage.user.city && 
+                 !storage.user.street) { 
         window.location.href = './phase2.html';
-      } else if (storage.user.name && storage.user.email && storage.user.birthdate && storage.user.city && storage.user.street && (!storage.user.image && !storage.user.hobbies)) {
+      } else if (storage.user.name && 
+                 storage.user.email && 
+                 storage.user.birthdate && 
+                 storage.user.city && 
+                 storage.user.street && 
+               (!storage.user.image && !storage.user.hobbies)) {
         window.location.href = './phase3.html';
       };
     },
+
+    checksite: (site) => {
+      if (site === 'phase2' && (!storage.user.name || !storage.user.email || !storage.user.birthdate)) {
+          window.location.href = './phase1.html';
+      } else if (site === 'phase3' && (!storage.user.city || !storage.user.street)) {
+          window.location.href = './phase2.html';
+      } else if (site === 'summary' && (!storage.user.image || !storage.user.hobbies)) {
+          window.location.href = './phase3.html';
+      }
+  },
+
 
     isDataStored: (keys) => {
       for (const key of keys) {
@@ -61,6 +81,7 @@ const storage = {
 
     reset: () => {
       localStorage.clear()
+      // pageManager.redirectToPhase1()
       window.location.href = './phase1.html'
     }
   };
