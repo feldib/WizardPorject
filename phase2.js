@@ -1,15 +1,17 @@
 // phase2.js
 
+const thisSite = 'phase2'
+
 document.addEventListener('DOMContentLoaded', () => {
   const phase2Form = document.getElementById('phase2-form');
   const backButton = document.getElementById('back-button');
 
-  storage.redirectToLastCompletedPhase();
+  storage.checksite(thisSite);
 
   phase2Form.addEventListener('submit', (event) => {
 
 
-    event.preventDefault();
+    event.preventDefault(thisSite);
 
     const city = document.getElementById('city').value;
     const street = document.getElementById('street').value;
