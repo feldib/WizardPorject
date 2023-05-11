@@ -1,11 +1,18 @@
 /* functions for phase 3 */
 //import storage from "./common"
 
+//check if stuff is there in the local Storage:
+document.addEventListener('DOMContentLoaded', () => {
+    storage.redirectToLastCompletedPhase();
+});
+
 //get imgURL from  the input
 const imgInputField = document.querySelector('#image-url');
 function getImgURL(){
     const inputValue = imgInputField.value;
-    storage.setItem('image', inputValue);
+    if (inputValue) {
+        storage.setItem('image', inputValue);
+    };
 };
 
 //get hobbies array
@@ -15,6 +22,10 @@ function trueHobbies(){
     for (let i = 0; i < hobbiesField.length; i++){
         checkedHobbiesArr.push(hobbiesField[i].value);
     };
+
+    if (checkedHobbiesArr.length === 0) {
+        return null;
+    }
 
     hobbieString = ''
     for (let i = 0; i < checkedHobbiesArr.length; i++){
@@ -26,6 +37,8 @@ function trueHobbies(){
 
 function getHobbies(){
     const hobbies = trueHobbies();
-    storage.setItem('hobbies', hobbies);
+    if (hobbies) {
+        storage.setItem('hobbies', hobbies);
+    }
 };
 

@@ -35,4 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
   backButton.addEventListener('click', () => {
     window.location.href = './phase1.html';
   });
+  
 });

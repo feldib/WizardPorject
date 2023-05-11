@@ -43,9 +43,9 @@ const storage = {
     redirectToLastCompletedPhase: () => {
       if (!storage.user.name || !storage.user.email || !storage.user.birthdate) {
         window.location.href = './phase1.html';
-      } else if (!storage.user.city || !storage.user.street) { 
-        //window.location.href = './phase2.html'; //it has to be fixed
-      } else if (!storage.user.image || !storage.user.hobbies) {
+      } else if (storage.user.name && storage.user.email && storage.user.birthdate && !storage.user.city && !storage.user.street) { 
+        window.location.href = './phase2.html';
+      } else if (storage.user.name && storage.user.email && storage.user.birthdate && storage.user.city && storage.user.street && (!storage.user.image && !storage.user.hobbies)) {
         window.location.href = './phase3.html';
       };
     },
@@ -69,7 +69,7 @@ const storage = {
   
 //buttons:
 function toPhase2(){
-    window.location.href = "./phase2.html"
+  window.location.href = "./phase2.html"
 };
 
 function toPhase3(){
