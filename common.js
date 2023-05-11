@@ -57,6 +57,11 @@ const storage = {
         }
       }
       return true;
+    },
+
+    reset: () => {
+      localStorage.clear()
+      window.location.href = './phase1.html'
     }
   };
   
