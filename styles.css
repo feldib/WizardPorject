@@ -1,4 +1,6 @@
 body {
+    /*background-image: url('./picture/WhatsApp Image 2023-05-11 at 16.26.21.jpeg'); */
+    display: flex;
     background-color: #FFD8BE;
     display: flex;
     justify-content: center;
@@ -44,6 +46,9 @@ body {
 
 /* Separate css for phase2 div*/
 .question-div-phase1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 10px;
     width : 280px;
     height: 50px;
@@ -53,7 +58,9 @@ body {
 }
 
 .button-div {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width : 280px;
     height: 60px;
     background-color: #F2F4F3;
@@ -69,8 +76,6 @@ body {
 }
 
 button {
-    margin-top: 10px;
-    margin-left: 60px;
     font-family: 'courier new';
     font-weight: bold;
     color: #000000;
@@ -89,5 +94,5 @@ button {
 button:hover {
     color: #F2F4F3;
     background: #191919;
-    
+
   }

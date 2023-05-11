@@ -2,6 +2,11 @@
 //getting stuff out from the local storage
 //import storage from './common.js'
 
+//check if everything is there:
+document.addEventListener('DOMContentLoaded', () => {
+    storage.redirectToLastCompletedPhase();
+});
+
 const userDetails = [
     ['Name', storage.user.name],
     ['Email', storage.user.email],

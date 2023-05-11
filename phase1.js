@@ -1,6 +1,8 @@
 const birthDate = document.querySelector("#birthDate")
 const form = document.querySelector("form")
 
+
+
 function fillInDashes(event){
     let value = event.target.value
     if(value.length == 2 || value.length == 5){
