@@ -1,37 +1,34 @@
-// phase2.js
-
 const thisSite = 'phase2'
 
+setTimeout(()=>{return}, 10000)
+
 document.addEventListener('DOMContentLoaded', () => {
-  const phase2Form = document.getElementById('phase2-form');
   const backButton = document.getElementById('back-button');
+  const nextButton = document.getElementById('next-button');
 
   storage.checksite(thisSite);
 
-  phase2Form.addEventListener('submit', (event) => {
-
-
-    event.preventDefault(thisSite);
-
+  nextButton.addEventListener('click', () => {
     const city = document.getElementById('city').value;
     const street = document.getElementById('street').value;
     const number = document.getElementById('number').value;
 
-    storage.setItem('city', city);
-    storage.setItem('street', street);
+    if(city){
+      storage.setItem('city', city);
+    }
+    if(street){
+      storage.setItem('street', street);
+    }
     if (number) {
       storage.setItem('number', number);
-    } else {
-      storage.removeItem('number');
     }
     
     if (!storage.isDataStored(['city', 'street', 'number'])) {
       alert("Please fill in all fields before proceeding.");
-      event.preventDefault();
-      return;
-    };
-
-    //window.location.href = '../phase3/index.html';
+    }else{
+      toPhase3()
+    }
+    
   });
 
   backButton.addEventListener('click', () => {

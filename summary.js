@@ -18,6 +18,9 @@ const userDetails = [
     ['Number', storage.user.number],
     ['Hobbies', storage.user.hobbies],
     ['Image', storage.user.image],
+    ['Happy', storage.user.happy],
+    ['Does skydiving', storage.user.skydiving],
+    ['Has $1', storage.user.hasOneDollar]
 ];
 
 //Display a list with user details:
@@ -27,7 +30,7 @@ const questionDiv = document.querySelector('.question-div');
 
 //creat a new ul:
 const userDetailsList = document.createElement('ul');
-userDetailsList.className = 'user-details';
+userDetailsList.id = 'user-details';
 
 // for(const details of storage.toArray()) {
 

@@ -37,6 +37,15 @@ const storage = {
       },
       get hobbies() { //this
         return localStorage.getItem('hobbies');
+      },
+      get happy() { //this
+        return localStorage.getItem('happy');
+      },
+      get skydiving() { //this
+        return localStorage.getItem('skydiving');
+      },
+      get hasOneDollar() { //this
+        return localStorage.getItem('hasOneDollar');
       }
     },
   
@@ -57,15 +66,18 @@ const storage = {
                (!storage.user.image && !storage.user.hobbies)) {
         window.location.href = './phase3.html';
       };
+      //vissza kell hogy vigyen PHASE
     },
 
     checksite: (site) => {
-      if (site === 'phase2' && (!storage.user.name || !storage.user.email || !storage.user.birthdate)) {
+      if (site === 'phase2' && !(storage.user.name && storage.user.email && storage.user.birthdate)) {
           window.location.href = './phase1.html';
-      } else if (site === 'phase3' && (!storage.user.city || !storage.user.street)) {
+      } else if (site === 'phase3' && !(storage.user.city && storage.user.street)) {
           window.location.href = './phase2.html';
-      } else if (site === 'summary' && (!storage.user.image || !storage.user.hobbies)) {
-          window.location.href = './phase3.html';
+      } else if (site === 'phase4' && !(storage.user.image)) {
+        window.location.href = './phase3.html';
+      } else if (site === 'summary' && !(storage.user.happy && storage.user.skydiving && storage.user.hasOneDollar)) {
+          window.location.href = './phase4.html';
       }
   },
 
@@ -89,6 +101,10 @@ const storage = {
   //export default storage;
   
 //buttons:
+function toPhase1(){
+  window.location.href = './phase1.html'
+};
+
 function toPhase2(){
   window.location.href = "./phase2.html"
 };
@@ -97,8 +113,8 @@ function toPhase3(){
   window.location.href = "./phase3.html"
 };
 
-function toPhase1(){
-  window.location.href = './phase1.html'
+function toPhase4(){
+  window.location.href = './phase4.html'
 };
 
 function goToSummary(){

@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
+
 body {
     /*background-image: url('./picture/WhatsApp Image 2023-05-11 at 16.26.21.jpeg'); */
     display: flex;
-    background-color: #FFD8BE;
+    background-image: url("baloonBackground.jpg");
     display: flex;
     justify-content: center;
     align-items: center;
     align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /* Big box */
@@ -14,57 +18,57 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #EBEBD2;
+    background-color: #2ba147;
     box-shadow: 3px 4px 1px 0px rgba(49, 54, 56, 0.64);
     width: 500px;
     height: auto;
     padding-bottom: 20px;
+    border-radius: 30px;
+    border: 10px rgba(68, 68, 68, 0.42) solid;
 }
 
 .box-title {
     padding-left: 30px;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 25px;
+    color: #253d2a;
+    font-size: 30px;
     letter-spacing: 2px;
     word-spacing: -5px;
-    color: #000000;
     font-weight: 400;
     text-decoration: underline solid rgb(68, 68, 68);
     font-style: normal;
     font-variant: small-caps;
-    text-transform: lowercase;
+    text-transform: uppercase;
+    font-family: 'Darumadrop One', cursive;
 }
 /* Separate lil divs */
-.question-div {
+.question-div, button {
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;  
+    border-radius: 3px;
+    border: 3px #398049 solid;
     margin: 10px;
     width : 280px;
     height: 160px;
-    background-color: #F2F4F3;
-    border: #000000 solid 2px;
+    background-color: rgb(137, 212, 175);
+    padding: 5px;
     padding-bottom: 10px;
 }
 
 /* Separate css for phase2 div*/
-.question-div-phase1 {
+.question-div-type-2, .button-div{
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
     width : 280px;
     height: 50px;
-    background-color: #F2F4F3;
-    border: #000000 solid 2px;
-    padding-bottom: 10px;
 }
 
 .button-div {
     display: flex;
-    justify-content: center;
-    align-items: center;
     width : 280px;
     height: 60px;
-    background-color: #F2F4F3;
-    border: #000000 solid 2px;
 }
 
 .question{
@@ -76,18 +80,16 @@ body {
 }
 
 button {
-    font-family: 'courier new';
     font-weight: bold;
+    font-family: 'Comic Neue', cursive;  
     color: #000000;
-    font-size: 12px;
+    font-size: 15px;
     text-shadow: 0px 0px 0px #191919;
     box-shadow: 1px 1px 1px #191919;
     padding: 5px;
-    border-radius: 0px;
-    border: 1px solid #191919;
-    background: #F2F4F3;
-    width: 50px;
-    height: 25px;
+    padding-bottom: 10px;
+    width: 55px;
+    height: 30px;
 
   }
 
@@ -96,3 +98,11 @@ button:hover {
     background: #191919;
 
   }
+
+.question-div:has(#user-details){
+    padding-bottom: 75px;
+}
+
+label{
+    margin-right: 10px;
+}
